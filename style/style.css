@@ -6,15 +6,15 @@
     min-height: 100vh;
     background-color: #545b62;
 }
-.container-fluid .todo-list-body{
+.container-fluid .todo-list{
     width: 500px;
     min-height: 85vh;
     color: white;
-    background-color: #6c757d;
+    background-color: #4d5257;
     border-radius: 15px;
     box-shadow: 5px 5px 50px black;
 }
-.todo-list-body .todo-list-head{
+.todo-list .todo-list-head{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -40,20 +40,96 @@
     width: 100%;
 }
 .search input{
+    font-weight: 650;
+    font-size: large;
     padding-left: 10px;
-    width: 100%;
+    width: 60%;
     border: none;
-}
-.search button{
-    width: 30%;
 }
 .search input:focus{
     outline: none;
 }
-.search .btn{
+.search button{
+    border-radius: 0px;
+    width: 40%;
     border: none !important;
 }
-.search .btn:focus{
+button:focus{
     box-shadow: none !important;
-    border: none !important;
+}
+.list-buttons{
+    display: flex;
+    width: 100%;
+}
+.list-buttons button{
+    width: 50%;
+    border-radius: 0px;
+}
+.content-ading{
+    background-color: white;
+    display: flex;
+    width: 100%;
+}
+.content-ading button{
+    border-radius: 50%;
+    box-shadow: none !important;
+    margin-right: 10px;
+}
+.content-ading input{
+    border: none;
+    font-weight: 650;
+    outline: none;
+    font-size: large;
+    padding-left: 10px;
+    width: 100%;
+}
+/*-------------------------------------------------*/
+.todolist-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.todolist-body .list-item{
+    margin: 10px;
+    padding: 5px;
+    box-shadow: 5px 10px 30px rgb(61, 57, 57);
+    border-radius: 10px;
+}
+.list-item .item-head{
+    display: flex;
+    justify-content: space-between;
+}
+.remove-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.remove-buttons .content-destBin:hover{
+    -webkit-user-select: none;
+    color: gray;
+    cursor: pointer !important;
+}
+.content-div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    word-wrap: break-word !important;
+    padding: 5px 10px;
+    display: flex !important;
+    flex-direction: row !important;
+}
+.content-div i{
+    margin-top: 7px;
+    font-size: 15px;
+    float: left !important;
+}
+.content-div input{
+    margin-right: 3px;
+    margin-top: 7.7px;
+}
+.content-div p{
+    display: flex;
+    word-wrap: break-word !important;
+    margin: 0px;
 }

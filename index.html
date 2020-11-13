@@ -6,24 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
     <link rel="stylesheet" href="./style/style.css">
     <title>ToDo</title>
 </head>
 
 <body>
 
-    <div class="container-fluid">
-        <div class="todo-list-body">
+    <div class="container-fluid py-4">
+        <div class="todo-list">
             <div class="todo-list-head">
                 <div class="heading">
                     <h2>Tiny ToDo list</h2>
                 </div>
                 <div class="head-items">
                     <div class="search">
-                        <input type="search" name="" id="search-bar">
+                        <input type="search" name="" placeholder="Search . . . " id="search-bar">
                         <button class="btn btn-secondary">Search</button>
                     </div>
                 </div>
+                <div class="list-buttons">
+                    <button class="btn btn-secondary px-auto">Now</button>
+                    <button class="btn btn-secondary">:Before</button>
+                </div>
+                <div class="content-ading py-1">
+                    <input placeholder="Do Something . . . " type="text" id="content-writing-space"><button id="adding-text-button" class="btn btn-success"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="remove-buttons px-3">
+                <i id="remove-all-Items" class="fa fa-trash content-destBin py-3"> Clear All</i>
+                <i id="removeItems" class="fas fa-check content-destBin py-3"> Clear</i>
+            </div>
+            <div class="todolist-body" id="todolist-body">
             </div>
         </div>
     </div>
