@@ -8,9 +8,9 @@ var spanDate;
 var contentDiv;
 var contentPTag;
 var destBin;
-var i = 0;
 var listId = [];
-var value;
+var remvalue;
+var delval;
 
 function arrIds(val) {
     listId.push(val);
@@ -31,23 +31,17 @@ document.getElementById("adding-text-button").addEventListener('click', function
     destBin = document.createElement("i");
 
 
-    destBin.addEventListener("click", function () {
-        container.removeChild(listiItemDiv);
-    })
-
-
     if (mainContent !== "") {
         listiItemDiv.setAttribute("class", "list-item");
-        value = time.getTime();
-        listiItemDiv.setAttribute("id", value);
+        remvalue = time.getTime();
+        listiItemDiv.setAttribute("id", remvalue);
         itemHeadDiv.setAttribute("class", "item-head");
         spanItem.setAttribute("id", "time");
         spanDate.setAttribute("id", "date");
         contentDiv.setAttribute("class", "content-div");
         destBin.setAttribute("class", "fa fa-trash");
-        destBin.setAttribute("id", value);
-        arrIds(value);
-
+        destBin.setAttribute("onClick", remvalue);
+        arrIds(remvalue);
 
         container.appendChild(listiItemDiv);
         listiItemDiv.appendChild(itemHeadDiv);
@@ -64,6 +58,21 @@ document.getElementById("adding-text-button").addEventListener('click', function
         contentPTag.innerHTML = mainContent;
         document.getElementById("content-writing-space").value = "";
         textUntypeAria.setAttribute("placeholder", "Do Something . . .");
+
+
+        document.getElementById(remvalue).addEventListener("click", function () {
+            for (let i = 0; i < listId.length; i++) {
+                console.log(remvalue + " ehfeh")
+                if (remvalue[i] == delval) {
+                    alert("tdtt");
+                    delval = listId[i];
+                    document.getElementById(delval).remove();
+                    listId.pop(delval);
+                }
+            }
+            console.log(listId);
+        });
+
     } else {
         textUntypeAria.setAttribute("placeholder", "Type somthing . . .");
     }
@@ -72,5 +81,4 @@ document.getElementById("adding-text-button").addEventListener('click', function
 document.getElementById("remove-all-Items").addEventListener("click", function () {
     document.getElementById("todolist-body").innerHTML = "";
 });
-
 
