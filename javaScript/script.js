@@ -7,14 +7,10 @@ var spanItem;
 var spanDate;
 var contentDiv;
 var contentPTag;
-var destBin;
-var listId = [];
-var remvalue;
-var delval;
-
-function arrIds(val) {
-    listId.push(val);
-}
+var checkbox;
+var delIds = [];
+var checked;
+var remvalue = 0;
 
 document.getElementById("adding-text-button").addEventListener('click', function () {
     var time = new Date();
@@ -22,26 +18,26 @@ document.getElementById("adding-text-button").addEventListener('click', function
     container = document.getElementById("todolist-body");
     textUntypeAria = document.getElementById("content-writing-space");
 
-    listiItemDiv = document.createElement("li");//create 'div' tag
+    listiItemDiv = document.createElement("div");//create 'div' tag
     itemHeadDiv = document.createElement("div");//create 'div' tag
     spanItem = document.createElement("span");//create 'span' tag
     spanDate = document.createElement("span");//create 'span' tag
     contentDiv = document.createElement("div");//create 'div' tag
+    checkbox = document.createElement("input")
     contentPTag = document.createElement("p");//create 'p' tag
-    destBin = document.createElement("i");
 
 
     if (mainContent !== "") {
         listiItemDiv.setAttribute("class", "list-item");
-        remvalue = time.getTime();
+        remvalue += 1
         listiItemDiv.setAttribute("id", remvalue);
         itemHeadDiv.setAttribute("class", "item-head");
         spanItem.setAttribute("id", "time");
         spanDate.setAttribute("id", "date");
         contentDiv.setAttribute("class", "content-div");
-        destBin.setAttribute("class", "fa fa-trash");
-        destBin.setAttribute("onClick", remvalue);
-        arrIds(remvalue);
+        checkbox.setAttribute("type", "checkBox");
+        checkbox.setAttribute("class", "checkbox del");
+        checkbox.setAttribute("id", remvalue);
 
         container.appendChild(listiItemDiv);
         listiItemDiv.appendChild(itemHeadDiv);
@@ -49,8 +45,7 @@ document.getElementById("adding-text-button").addEventListener('click', function
         itemHeadDiv.appendChild(spanDate);
         listiItemDiv.appendChild(contentDiv);
         contentDiv.appendChild(contentPTag);
-        contentDiv.appendChild(destBin);
-        console.log(listiItemDiv);
+        contentDiv.appendChild(checkbox);
 
 
         spanDate.innerHTML = time.toDateString();
@@ -58,21 +53,19 @@ document.getElementById("adding-text-button").addEventListener('click', function
         contentPTag.innerHTML = mainContent;
         document.getElementById("content-writing-space").value = "";
         textUntypeAria.setAttribute("placeholder", "Do Something . . .");
+        delIds.push(remvalue);
 
 
-        document.getElementById(remvalue).addEventListener("click", function () {
-            for (let i = 0; i < listId.length; i++) {
-                console.log(remvalue + " ehfeh")
-                if (remvalue[i] == delval) {
-                    alert("tdtt");
-                    delval = listId[i];
-                    document.getElementById(delval).remove();
-                    listId.pop(delval);
+
+        document.getElementById("remove-Items").addEventListener("click", function () {
+            let dell = document.querySelectorAll(".del");
+            dell.forEach((dell) => {
+                if (dell.checked) {
+                    checked = dell.id;
+                    document.getElementById(checked).remove();
                 }
-            }
-            console.log(listId);
-        });
-
+            })
+        })
     } else {
         textUntypeAria.setAttribute("placeholder", "Type somthing . . .");
     }
