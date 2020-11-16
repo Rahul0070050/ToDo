@@ -8,7 +8,7 @@ var spanDate;
 var contentDiv;
 var contentPTag;
 var checkbox;
-var delIds = [];
+var checkboxContainer;
 var checked;
 var remvalue = 0;
 
@@ -23,6 +23,7 @@ document.getElementById("adding-text-button").addEventListener('click', function
     spanItem = document.createElement("span");//create 'span' tag
     spanDate = document.createElement("span");//create 'span' tag
     contentDiv = document.createElement("div");//create 'div' tag
+    checkboxContainer = document.createElement("div");
     checkbox = document.createElement("input")
     contentPTag = document.createElement("p");//create 'p' tag
 
@@ -35,6 +36,7 @@ document.getElementById("adding-text-button").addEventListener('click', function
         spanItem.setAttribute("id", "time");
         spanDate.setAttribute("id", "date");
         contentDiv.setAttribute("class", "content-div");
+        checkboxContainer.setAttribute("class","sizing");
         checkbox.setAttribute("type", "checkBox");
         checkbox.setAttribute("class", "checkbox del");
         checkbox.setAttribute("id", remvalue);
@@ -45,7 +47,8 @@ document.getElementById("adding-text-button").addEventListener('click', function
         itemHeadDiv.appendChild(spanDate);
         listiItemDiv.appendChild(contentDiv);
         contentDiv.appendChild(contentPTag);
-        contentDiv.appendChild(checkbox);
+        contentDiv.appendChild(checkboxContainer);
+        checkboxContainer.appendChild(checkbox);
 
 
         spanDate.innerHTML = time.toDateString();
@@ -53,8 +56,7 @@ document.getElementById("adding-text-button").addEventListener('click', function
         contentPTag.innerHTML = mainContent;
         document.getElementById("content-writing-space").value = "";
         textUntypeAria.setAttribute("placeholder", "Do Something . . .");
-        delIds.push(remvalue);
-
+        console.log(listiItemDiv);
 
 
         document.getElementById("remove-Items").addEventListener("click", function () {
@@ -64,8 +66,8 @@ document.getElementById("adding-text-button").addEventListener('click', function
                     checked = dell.id;
                     document.getElementById(checked).remove();
                 }
-            })
-        })
+            });
+        });
     } else {
         textUntypeAria.setAttribute("placeholder", "Type somthing . . .");
     }
