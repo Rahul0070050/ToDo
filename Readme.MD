@@ -2,7 +2,7 @@
 
 I created a simple :spiral_notepad:[todo app](https://rahul0070050.github.io/ToDo/), this is a basic one actually i'm trying to add tole more features in it. The app can perform basic operations like adding and removing todo's also have multiple select option for removing for finished todo's. Now the app is in the development stage
 
-### **The web site is built with**
+## **Built With**
 * **HTML**
 * **CSS**
 * **JS**
