@@ -7,6 +7,10 @@ I created a simple :spiral_notepad:[todo app](https://rahul0070050.github.io/ToD
 * **CSS**
 * **JS**
 
+<br />
+<br />
+
+
 <div align="center">
     <img src="images/image001.png" width="300rem" /> 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
