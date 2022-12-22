@@ -39,10 +39,12 @@ Go to the directory
 cd ToDo
 ```
 
-#### Create a new barcch for you changes the Do some changes
+#### Create a new branch for you changes the Do some changes
 
 ```bash
 git branch <new_branch>
+
+git checkout <new_branch>
 
 # commit and push
 
@@ -50,3 +52,5 @@ git push origin <new_branch>
 
 # make a pull request
 ```
+
+### Thank you!
