@@ -28,20 +28,20 @@ I created a simple :spiral_notepad:[todo app](https://rahul0070050.github.io/ToD
 <br />
 
 ```bash
-    git clone https://github.com/Rahul0070050/ToDo
+git clone https://github.com/Rahul0070050/ToDo
 ```
 ```bash
-    cd ToDo
+cd ToDo
 ```
 
 #### Create a new barcch for you changes the Do some changes
 
 ```bash
-    git branch <new_branch>
+git branch <new_branch>
 
-    # commit and push
+# commit and push
 
-    git push origin <new_branch> 
+git push origin <new_branch> 
 
-    # make a pull request
+# make a pull request
 ```
