@@ -26,7 +26,7 @@ I created a simple :spiral_notepad:[todo app](https://rahul0070050.github.io/ToD
 <br/>
 <br/>
 
-## **Contribute**
+## Contribute
 
 ### If you have any idea share with me
 <br />
