@@ -34,6 +34,7 @@ I created a simple :spiral_notepad:[todo app](https://rahul0070050.github.io/ToD
 ```bash
 git clone https://github.com/Rahul0070050/ToDo
 ```
+Go to the directory
 ```bash
 cd ToDo
 ```
